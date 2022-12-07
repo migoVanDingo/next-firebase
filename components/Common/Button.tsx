@@ -5,12 +5,13 @@ const SIZES = ['btn--primary', 'btn--outline']
 const STYLES = ['btn--medium', 'btn--large']
 
 const SButton = styled.button.attrs(props => ({className: props.className}))`
-    padding: 6px 18px;
+    padding: 6px 12px;
     border-radius: 4px;
     outline: none;
     border: none;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: .9rem;
+    margin-right: 2rem;
     
     &.btn--primary{
         background-color:#990B00;

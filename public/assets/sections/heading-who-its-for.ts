@@ -1,0 +1,1 @@
+export const whoItsForHeading = "Who is Kung-Fu for?"

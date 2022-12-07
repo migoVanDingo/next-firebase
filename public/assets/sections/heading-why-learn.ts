@@ -1,0 +1,1 @@
+export const whyLearnHeading = "Why learn Shao-Lin Kung-Fu?"

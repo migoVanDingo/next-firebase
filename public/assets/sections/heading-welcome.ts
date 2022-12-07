@@ -1,0 +1,1 @@
+export const welcomeHeading = "Welcome to Shao-Lin New Mexico"
