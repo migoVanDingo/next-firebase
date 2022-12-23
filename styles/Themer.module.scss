@@ -1,0 +1,23 @@
+.arch {
+    display: flex;
+    justify-content: flex-end;
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+.colorInput {}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    background-color: rgb(158, 158, 158);
+    color: rgb(34, 34, 34);
+}
+
+.fields {
+    width: 90%;
+    display: flex;
+}
