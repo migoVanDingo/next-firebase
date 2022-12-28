@@ -4,8 +4,11 @@ import styled from "styled-components"
 import shaolinTemple from "../../public/assets/home/shaolintemple0-min.jpg"
 
 const SLandingContainer = styled.div`
+
+    position: relative;
     width: 100%;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 80px);
+    z-index: 50;
 `
 
 

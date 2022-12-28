@@ -6,7 +6,7 @@ import Image, { StaticImageData } from "next/image";
 const SContainer = styled.div.attrs( props => ({ className: props.className}))`
   display: flex;
   position: relative;
-  flex-direction: row;
+  flex-direction: column;
   height: 100vh;
   padding: 1em 6em;
 

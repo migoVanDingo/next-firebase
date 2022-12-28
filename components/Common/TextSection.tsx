@@ -5,7 +5,7 @@ const SContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 100px 0px;
+    padding: 50px 0px 0px;
 `
 
 const SHeading = styled.h1`
@@ -14,8 +14,6 @@ const SHeading = styled.h1`
 `
 
 const SText = styled.p`
-    margin: auto;
-    padding: 1em 15em;
     line-height: 2em;
 `
 
