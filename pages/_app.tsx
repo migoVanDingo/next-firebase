@@ -12,9 +12,21 @@ const SBody = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${({theme}) => theme.colors.primaryColor};
+  line-height: ${({theme}) => theme.text.lineHeight};
   z-index: -1000;
 
 `;
+
+const SSidebar = styled.div`
+  width: 350px;
+  height: 98vh;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  background-color: purple;
+  z-index: 99;
+
+`
 
 /* const SBgImage = styled.div`
   opacity: ${({ theme }) => theme.colors.opacity};
@@ -53,6 +65,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {" "}
         Switch
       </button>
+      <SSidebar />
       <Component {...pageProps} />
      {/*  <SBgImage>
       <Image

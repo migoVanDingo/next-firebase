@@ -3,27 +3,34 @@ import { createGlobalStyle } from "styled-components";
 export const light_1 = {
   colors: {
     primaryColor: "white",
-    secondaryColor: "red",
+    secondaryColor: "#c20000",
     mobileLinkcolor: "white",
     mobileLinkColorHover: "#d3d3d3",
     textColor: "black",
     opacity: "1"
+  },
+  text:{
+    lineHeight: "35px"
   },
   header: {
     justifyContent: "right",
     gap: "1.2",
     height: "80px",
   },
+
 };
 
 export const dark_1 = {
   colors: {
     primaryColor: "#1f1f1f",
-    secondaryColor: "red",
+    secondaryColor: "#c20000",
     mobileLinkcolor: "#2c2c2c",
     mobileLinkColorHover: "#202020",
     textColor: "#dbdbdb",
     opacity: "0.3"
+  },
+  text:{
+    lineHeight: "35px"
   },
   header: {
     justifyContent: "right",
