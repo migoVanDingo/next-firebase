@@ -6,16 +6,21 @@ import shaolinTemple from "../../public/assets/home/shaolintemple0-min.jpg"
 const SLandingContainer = styled.div`
 
     position: relative;
-    width: 100%;
+    width: calc(100% - ${({theme}) => theme.sidebar.width});
     height: calc(100vh - 80px);
     z-index: 50;
+    transition: all 0.2s ease;
+
+    &.extend {
+      width: 100vw;
+    }
 `
 
 
 
-export default function LandingPage() {
+export default function LandingPage({toggleSidebar}: any) {
   return (
-    <SLandingContainer>
+    <SLandingContainer className={toggleSidebar ? "extend":""}>
         <Image
     alt="logo"
     src={shaolinTemple}

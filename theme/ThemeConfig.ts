@@ -17,6 +17,9 @@ export const light_1 = {
     gap: "1.2",
     height: "80px",
   },
+  sidebar: {
+    width: "350px"
+  }
 
 };
 
@@ -37,6 +40,10 @@ export const dark_1 = {
     gap: "1.2",
     height: "80px",
   },
+  sidebar: {
+    width: "350px"
+  }
+
 
 };
 

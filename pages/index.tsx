@@ -23,8 +23,13 @@ import { repeat } from "lodash";
 const SMain = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: [start] 150px [line2] auto [line3] 150px [line4] 300px [end];
+  grid-template-columns: [start] 150px [line2] auto [line3] 150px [line4] ${({theme}) => theme.sidebar.width} [end];
   //grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+  transition: all 0.2s ease;
+
+  &.deactivate-sidebar {
+    grid-template-columns: [start] 150px [line2] auto [line3] 150px [line4] 2rem [end];
+  }
 
 `;
 
@@ -48,13 +53,16 @@ const STextImage = styled.div`
   border: 2px solid rebeccapurple;
 `;
 
-export default function Home() {
-  //Styled-components-round-2: Theme provider
+export default function Home({toggleSidebar}: any) {
+  
+  
+  console.log("booL: " + toggleSidebar)
+
   return (
     <>
       <Navbar />
-      <LandingPage />
-      <SMain>
+      <LandingPage toggleSidebar={toggleSidebar}/>
+      <SMain className={toggleSidebar ? "deactivate-sidebar" : ""}>
         <SGridItem className="item">1</SGridItem>
         <SGridItem className="item main-content">
           <TextSection heading={welcomeHeading} text={welcomeText} />

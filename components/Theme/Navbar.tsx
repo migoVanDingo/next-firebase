@@ -47,6 +47,7 @@ const SNavbar = styled.div`
 
   @media screen and (max-width: 880px) {
     justify-content: center;
+    position: fixed;
   }
 `;
 
@@ -83,6 +84,7 @@ const SList = styled.ul`
     &.active{
       left: 0;
       opacity: 1;
+      position: fixed;
     }
     
   }
