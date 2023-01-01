@@ -4,6 +4,7 @@ export const light_1 = {
   colors: {
     primaryColor: "white",
     secondaryColor: "#c20000",
+    auxColor:"#ededed",
     mobileLinkcolor: "white",
     mobileLinkColorHover: "#d3d3d3",
     textColor: "black",
@@ -27,6 +28,7 @@ export const dark_1 = {
   colors: {
     primaryColor: "#1f1f1f",
     secondaryColor: "#c20000",
+    auxColor:"#282828",
     mobileLinkcolor: "#2c2c2c",
     mobileLinkColorHover: "#202020",
     textColor: "#dbdbdb",

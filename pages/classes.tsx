@@ -17,9 +17,17 @@ import img8 from "../public/assets/classes/File6-min.jpg";
 const SMain = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: [start] 150px [line2] auto [line3] 150px [line4] 400px [end];
+  grid-template-columns: [start] 150px [line2] auto [line3] 150px [line4] ${({theme}) => theme.sidebar.width} [end];
   //grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+  transition: all 0.2s ease;
+
+  &.deactivate-sidebar {
+    grid-template-columns: [start] 150px [line2] auto [line3] 150px [line4] 2rem [end];
+  }
+
 `;
+
+
 
 const SGridItem = styled.div`
   z-index: 15;
@@ -50,20 +58,26 @@ const SGridItem = styled.div`
 
 const SRowPics = styled.div`
   display: flex;
-  width: calc(100% - 400px);
+  width: calc(100vw - ${({theme}) => theme.sidebar.width});
   flex-direction: row;
   //grid-template-columns: [start] auto [line2] 300px [end];
+
+  transition: all 0.2s ease;
+
+  &.active{
+    width: 100%;
+  }
 `;
 
 const welcomeHeading = "Classes";
 const welcomeText =
   "Like the Shao-Lin monks and nuns of Ancient China, we cross-train in a variety of styles and conditioning which makes the Shao-Lin system of Kung-Fu the most complete martial art! The amount of Kung-Fu, Tai Chi/Chi Kung and Wooden Man (Dummy) training we offer is unrivaled in the state of New Mexico.";
 
-export default function classes() {
+export default function classes({toggleSidebar}: any) {
   return (
     <>
       <Navbar />
-      <SMain>
+      <SMain className={toggleSidebar ? "deactivate-sidebar" : ""}>
         <SGridItem className="item"></SGridItem>
         <SGridItem className="item main-content">
           <TextSection heading={welcomeHeading} text={welcomeText} />
@@ -90,7 +104,7 @@ export default function classes() {
         <SGridItem className="item color-row"></SGridItem>
         <SGridItem className="item color-row"></SGridItem>
       </SMain>
-      <SRowPics>
+      <SRowPics className={toggleSidebar ? "active" : ""} >
         <SGridItem className="img-cont">
           <Image
             src={img1}
@@ -106,7 +120,7 @@ export default function classes() {
           />
         </SGridItem>
       </SRowPics>
-      <SMain>
+      <SMain className={toggleSidebar ? "deactivate-sidebar" : ""}>
         <SGridItem className="item "></SGridItem>
         <SGridItem className="item main-content ">
           <h3>Instruction</h3>
@@ -143,7 +157,7 @@ export default function classes() {
         <SGridItem className="item "></SGridItem>
         <SGridItem className="item "></SGridItem>
       </SMain>
-      <SRowPics>
+      <SRowPics className={toggleSidebar ? "active" : ""}>
         <SGridItem className="img-cont">
           <Image
             src={img3}
@@ -160,7 +174,7 @@ export default function classes() {
         </SGridItem>
       </SRowPics>
 
-      <SMain>
+      <SMain className={toggleSidebar ? "deactivate-sidebar" : ""}>
         <SGridItem className="item color-row"></SGridItem>
         <SGridItem className="item main-content  color-row">
           <h3>Wooden Man & Iron Monk Training</h3>
@@ -211,7 +225,7 @@ export default function classes() {
         <SGridItem className="item color-row"></SGridItem>
         <SGridItem className="item color-row"></SGridItem>
       </SMain>
-      <SRowPics>
+      <SRowPics className={toggleSidebar ? "active" : ""}>
         <SGridItem className="img-cont">
           <Image
             src={img5}
@@ -228,7 +242,7 @@ export default function classes() {
         </SGridItem>
       </SRowPics>
 
-      <SMain>
+      <SMain className={toggleSidebar ? "deactivate-sidebar" : ""}>
 
         <SGridItem className="item"></SGridItem>
         <SGridItem className="item main-content">
@@ -243,7 +257,7 @@ The Chinese Shao-Lin Center in Albuquerque has a tranquil oriental feel which ca
         <SGridItem className="item"></SGridItem>
       </SMain>
 
-      <SRowPics>
+      <SRowPics className={toggleSidebar ? "active" : ""}>
         <SGridItem className="img-cont">
           <Image
             src={img7}
@@ -260,7 +274,7 @@ The Chinese Shao-Lin Center in Albuquerque has a tranquil oriental feel which ca
         </SGridItem>
       </SRowPics>
 
-      <SMain>
+      <SMain className={toggleSidebar ? "deactivate-sidebar" : ""}>
         <SGridItem className="item"></SGridItem>
         <SGridItem className="item main-content">
           <TextSection heading={"Become a Student at Shao-Lin New Mexico"} text={"For pricing and membership details please visit our Membership page. You can jump there by clicking on the link in the header, or by clicking the link below. membership link If you would like more information on what it means to be a Shao-Lin student, or if you have any questions or concerns visit our Getting Started page by clicking the Getting Started button at the bottom of any page on the site."} />

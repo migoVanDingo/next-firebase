@@ -50,13 +50,13 @@ const STextImage = styled.div`
   float: right;
   height: 320px;
   width: 450px;
-  border: 2px solid rebeccapurple;
+  
 `;
 
 export default function Home({toggleSidebar}: any) {
   
   
-  console.log("booL: " + toggleSidebar)
+  
 
   return (
     <>

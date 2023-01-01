@@ -13,8 +13,8 @@ const SSidebar = styled.div<ISSidebar>`
   position: fixed;
   right: 0px;
   top:${(props) => props.top};
-  background-color: #3c3c3c;
-  z-index: 99;
+  background-color: ${({theme}) => theme.colors.auxColor};
+  z-index: 90;
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease;
@@ -22,6 +22,14 @@ const SSidebar = styled.div<ISSidebar>`
   &.deactivate{
     width: 0rem;
     background-color: transparent;
+  }
+
+  @media screen and (max-width: 880px) {
+    
+    position: fixed;
+    height: calc(100vh - ${({theme}) => theme.header.height});
+    top: ${({theme}) => theme.header.height};
+    
   }
 
  

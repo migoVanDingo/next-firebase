@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Logo from "../Navbar/Logo";
 
 /* const theme = {
   primaryColor: "#3e3e3e",
@@ -43,11 +44,12 @@ const SNavbar = styled.div`
   align-items: center;
   padding: 0px 2rem;
   box-shadow: 0px 0px 3px #3d3d3d;
-  z-index: 100;
+  z-index: 500;
 
   @media screen and (max-width: 880px) {
     justify-content: center;
     position: fixed;
+
   }
 `;
 
@@ -137,6 +139,18 @@ const SIconContainer = styled.div`
   }
 `;
 
+const SLogoContainer = styled.div`
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 1rem;
+  top: .7rem;
+  border-radius: 150px;
+  box-shadow: 0px 0px 8px #540000;
+  z-index: 10;
+  
+`;
+
 export default function Navbar() {
   const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
 
@@ -146,6 +160,9 @@ export default function Navbar() {
   return (
     <>
         <SNavbar>
+        <SLogoContainer>
+        <Logo />
+      </SLogoContainer>
           <SList className={isMenuActive ? "active" : ""}>
             {MenuItems &&
               MenuItems.map((item, index) => {
